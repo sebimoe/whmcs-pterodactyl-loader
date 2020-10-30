@@ -17,7 +17,7 @@ echo "Starting WHMCS unzip"
 if [ -f "$WHMCS_ZIP" ]; then
     echo "$WHMCS_ZIP exists. Extracting and copying to $APP_DIR"
     mkdir -p /tmp/whmcs-unzip
-    unzip -qqu /zips/whmcs-full.zip -d /tmp/whmcs-unzip
+    unzip -qqu "$WHMCS_ZIP" -d /tmp/whmcs-unzip
     mv "$WHMCS_ZIP" "$WHMCS_ZIP_LOADED"
     cp -r /tmp/whmcs-unzip/$WHMCS_ZIP_CONTENTS "$APP_DIR"
     rm -rf /tmp/whmcs-unzip
@@ -28,7 +28,7 @@ fi
 if [ -f "$MODULE_ZIP" ]; then
     echo "$MODULE_ZIP exists. Extracting and copying to $MODULES_DIR"
     mkdir -p /tmp/whmcs-unzip
-    unzip -qqu /zips/whmcs-full.zip -d /tmp/whmcs-unzip
+    unzip -qqu "$MODULE_ZIP" -d /tmp/whmcs-unzip
     mv "$MODULE_ZIP" "$MODULE_ZIP_LOADED"
     cp -r /tmp/whmcs-unzip/$MODULE_ZIP_CONTENTS "$MODULES_DIR"
     rm -rf /tmp/whmcs-unzip
