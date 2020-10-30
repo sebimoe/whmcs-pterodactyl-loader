@@ -41,6 +41,12 @@ else
     echo "$MODULE_ZIP does not exist. Skipping."
 fi
 
+if [ -f "/startup-script.sh" ]; then
+    echo "Startup script at /startup-script.sh detected, executing."
+    source /startup-script.sh
+    echo "Startup script exitted with code $?"
+fi
+
 echo "WHCMS PHP-FPM starting"
 
 php-fpm -F --pid /opt/bitnami/php/tmp/php-fpm.pid -y /opt/bitnami/php/etc/php-fpm.conf
