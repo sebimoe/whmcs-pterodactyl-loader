@@ -1,7 +1,7 @@
 # whmcs-pterodactyl-php-fpm
 PHP FPM 7.4 with ionCube - unzips WHMCS and Pterodactyl module on startup
 
-Based on `sebian/php-fpm-ioncube` image - PHP-FPM 7.4 with ionCube loader and extensions required and recommended for WHMCS.
+Based on [`sebian/php-fpm-ioncube`](https://hub.docker.com/r/sebian/php-fpm-ioncube) image - PHP-FPM 7.4 with ionCube loader and extensions required and recommended for WHMCS.
 
 This image checks `/zips` directory for `whmcs-full.zip` and `pterodactyl-whmcs.zip` files, if any is present these are renamed to `whmcs-full.loaded.zip` and `pterodactyl-whmcs.loaded.zip` respectively and extracted to `/app`.
 
@@ -13,5 +13,5 @@ Input files in `/zips`:
 
 ## Where the files are extracted, how to serve
 
-Files are unzipped to and served from `/app/` (and `/app/modules/servers/` as appropriate). PHP-FPM socket is open at port 9000 on all interfaces. See [`sebian/php-fpm-ioncube`]() or base image [`bitnami/php-fpm`](https://hub.docker.com/r/bitnami/php-fpm) for other configuration options, and how to serve via nginx.
+Files are unzipped to and served from `/app/` (and `/app/modules/servers/` as appropriate). PHP-FPM socket is open at port 9000 on all interfaces. See [`sebian/php-fpm-ioncube`](https://hub.docker.com/r/sebian/php-fpm-ioncube) or base image [`bitnami/php-fpm`](https://hub.docker.com/r/bitnami/php-fpm) for other configuration options, and how to serve via nginx.
 
