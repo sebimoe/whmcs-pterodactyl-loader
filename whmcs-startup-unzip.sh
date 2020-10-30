@@ -41,6 +41,8 @@ else
     echo "$MODULE_ZIP does not exist. Skipping."
 fi
 
+cd "$APP_DIR"
+
 if [ -f "/startup-script.sh" ]; then
     echo "Startup script at /startup-script.sh detected, executing."
     source /startup-script.sh
