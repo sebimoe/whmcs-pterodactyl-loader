@@ -15,3 +15,9 @@ Input files in `/zips`:
 
 Files are unzipped to and served from `/app/` (and `/app/modules/servers/` as appropriate). PHP-FPM socket is open at port 9000 on all interfaces. See [`sebian/php-fpm-ioncube`](https://hub.docker.com/r/sebian/php-fpm-ioncube) or base image [`bitnami/php-fpm`](https://hub.docker.com/r/bitnami/php-fpm) for other configuration options, and how to serve via nginx.
 
+## Configuration / environment variables
+
+See [whmcs-startup-unzip.sh](https://github.com/sebimoe/whmcs-pterodactyl-php-fpm/blob/master/whmcs-startup-unzip.sh) for how the variables are used.
+
+ - `APP_DIR` - default: `/app`
+ - `ZIP_DIR` - default: `/zips`
