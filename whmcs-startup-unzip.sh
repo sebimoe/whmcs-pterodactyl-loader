@@ -30,7 +30,12 @@ if [ -f "$MODULE_ZIP" ]; then
     mkdir -p /tmp/whmcs-unzip
     unzip -qqu "$MODULE_ZIP" -d /tmp/whmcs-unzip
     mv "$MODULE_ZIP" "$MODULE_ZIP_LOADED"
-    cp -r /tmp/whmcs-unzip/$MODULE_ZIP_CONTENTS "$MODULES_DIR"
+    cd /tmp/whmcs-unzip
+    if [ -d /tmp/whmcs-unzip/whmcs-master ]; then
+        # special case for zips downloaded from github
+        cd whmcs-master
+    fi
+    cp -r $MODULE_ZIP_CONTENTS "$MODULES_DIR"
     rm -rf /tmp/whmcs-unzip
 else
     echo "$MODULE_ZIP does not exist. Skipping."
